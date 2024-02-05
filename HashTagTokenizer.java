@@ -3,7 +3,7 @@ public class HashTagTokenizer {
 
 	public static void main(String[] args) {
 
-		String hashTag = "happytolearncode";
+		String hashTag = args[1];
 		String[] dictionary = readDictionary("dictionary.txt");
 		breakHashTag(hashTag, dictionary);
 	}
@@ -34,7 +34,7 @@ public class HashTagTokenizer {
 		}
 
 		int N = hashtag.length();
-		for (int i = 0; i <= N; i++) {
+		for (int i = 0; i <= N; i++) { // change to 0 from 1 the i
 			if (existInDictionary(hashtag.substring(i, N), dictionary)) {
 				breakHashTag(hashtag.substring(0, i), dictionary);
 				System.out.println(hashtag.substring(i, N));
