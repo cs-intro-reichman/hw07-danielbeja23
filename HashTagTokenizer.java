@@ -37,7 +37,7 @@ public class HashTagTokenizer {
 		for (int i = 1; i <= N; i++) {
 			if (existInDictionary(hashtag.substring(0, N - i), dictionary)) {
 				System.out.println(hashtag.substring(0, N - i));
-				breakHashTag(hashtag.substring(N - i + 1, N), dictionary);
+				breakHashTag(hashtag.substring(N - i, N), dictionary);
 			}
 		}
 		return;
