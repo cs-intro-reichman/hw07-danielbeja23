@@ -20,8 +20,7 @@ public class SpellChecker {
 		word2 = word2.toLowerCase();
 		if (word1.length() == 0 && word2.length() == 0) {
 			return 0;
-		}
-		if (word1.length() == 0 && word2.length() != 0) {
+		} else if (word1.length() == 0 && word2.length() != 0) {
 			return word2.length();
 		} else if (word2.length() == 0 && word1.length() != 0) {
 			return word1.length();
