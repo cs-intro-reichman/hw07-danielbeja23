@@ -19,7 +19,13 @@ public class HashTagTokenizer {
 	}
 
 	public static boolean existInDictionary(String word, String[] dictionary) {
-		return true;
+		for (int i = 0; i < dictionary.length; i++) {
+			if (word == dictionary[i]) {
+				return true;
+			}
+		}
+		return false;
+
 		// Your code here
 	}
 
