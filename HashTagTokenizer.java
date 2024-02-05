@@ -3,9 +3,8 @@ public class HashTagTokenizer {
 
 	public static void main(String[] args) {
 
-		String hashTag = args[0];
+		String hashTag = "happytolearncode";
 		String[] dictionary = readDictionary("dictionary.txt");
-		System.out.println(dictionary[1]);
 		breakHashTag(hashTag, dictionary);
 	}
 
@@ -33,11 +32,12 @@ public class HashTagTokenizer {
 		if (hashtag.isEmpty()) {
 			return;
 		}
+
 		int N = hashtag.length();
-		for (int i = 1; i <= N; i++) {
-			if (existInDictionary(hashtag.substring(0, N - i), dictionary)) {
-				System.out.println(hashtag.substring(0, N - i));
-				breakHashTag(hashtag.substring(N - i, N), dictionary);
+		for (int i = 0; i <= N; i++) {
+			if (existInDictionary(hashtag.substring(i, N), dictionary)) {
+				breakHashTag(hashtag.substring(0, i), dictionary);
+				System.out.println(hashtag.substring(i, N));
 			}
 		}
 
