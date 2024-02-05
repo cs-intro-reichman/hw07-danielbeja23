@@ -38,6 +38,8 @@ public class HashTagTokenizer {
 			if (existInDictionary(hashtag.substring(i, N), dictionary)) {
 				breakHashTag(hashtag.substring(0, i), dictionary);
 				System.out.println(hashtag.substring(i, N));
+				return;
+
 			}
 		}
 
