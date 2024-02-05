@@ -40,7 +40,6 @@ public class HashTagTokenizer {
 				breakHashTag(hashtag.substring(N - i, N), dictionary);
 			}
 		}
-		return;
 
 	}
 }
