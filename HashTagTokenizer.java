@@ -20,13 +20,11 @@ public class HashTagTokenizer {
 
 	public static boolean existInDictionary(String word, String[] dictionary) {
 		for (int i = 0; i < dictionary.length; i++) {
-			if (word == dictionary[i]) {
+			if (word.equals(dictionary[i])) {
 				return true;
 			}
 		}
 		return false;
-
-		// Your code here
 	}
 
 	public static void breakHashTag(String hashtag, String[] dictionary) {
