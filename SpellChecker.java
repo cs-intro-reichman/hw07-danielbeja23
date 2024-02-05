@@ -8,6 +8,7 @@ public class SpellChecker {
 		String[] dictionary = readDictionary("dictionary.txt");
 		String correction = spellChecker(word, threshold, dictionary);
 		System.out.println(correction);
+
 	}
 
 	public static String tail(String str) {
@@ -26,11 +27,14 @@ public class SpellChecker {
 		if (word2.length() == 0) {
 			return word1.length();
 		}
+
 		if (word1.charAt(0) == word2.charAt(0)) {
 			levenshtein(tail1, tail2);
+		} else {
+			return 1 + (Math.min(Math.min(levenshtein(tail1, word2), levenshtein(word1, tail2)),
+					levenshtein(tail1, tail2)));
 		}
-		return 1 + Math.min(Math.min(levenshtein(tail1, word2), levenshtein(word1, tail2)),
-				levenshtein(tail1, tail2));
+		return 0;
 
 	}
 
