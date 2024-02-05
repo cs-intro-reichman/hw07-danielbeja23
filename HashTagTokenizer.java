@@ -5,6 +5,7 @@ public class HashTagTokenizer {
 
 		String hashTag = args[0];
 		String[] dictionary = readDictionary("dictionary.txt");
+		System.out.println(dictionary[1]);
 		breakHashTag(hashTag, dictionary);
 	}
 
@@ -18,6 +19,7 @@ public class HashTagTokenizer {
 	}
 
 	public static boolean existInDictionary(String word, String[] dictionary) {
+		return true;
 		// Your code here
 	}
 
