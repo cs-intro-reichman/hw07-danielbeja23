@@ -24,11 +24,11 @@ public class SpellChecker {
 		if (word2.isEmpty()) {
 				return word1.length();
 			}
-		if (word1.charAt(0 == word2.charAt(0))) {
-					levenshtein(tail(word1), tail(word2));
+		if (word1.charAt(0) == word2.charAt(0)) {
+					return levenshtein(tail(word1), tail(word2));
 		}
 		int min = Math.min(levenshtein(tail(word1), word2), levenshtein(word1, tail(word2)));
-		return 1 + Math.min(min, levenshtein(tail(word1), tail(word2)) +0 );
+		return 1 + Math.min(min, levenshtein(tail(word1), tail(word2))+0 );
 
 	}
 
