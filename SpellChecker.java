@@ -52,7 +52,7 @@ public class SpellChecker {
 				minSteps = checkLeve;
 			}
 		}
-		if (threshold <= minSteps) {
+		if (threshold < minSteps) {
 			return word;
 		}
 		return minDistance;
