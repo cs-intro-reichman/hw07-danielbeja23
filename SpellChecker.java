@@ -43,16 +43,16 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		String minDistance = word;
-		int minSteps = threshold;
+		String minDistance = "";
+		int minSteps = word.length();
 		for (int i = 0; i < dictionary.length; i++) {
 			int checkLeve = levenshtein(word, dictionary[i]);
-			if (checkLeve <= minSteps) {
+			if (checkLeve < minSteps) {
 				minDistance = dictionary[i];
 				minSteps = checkLeve;
 			}
 		}
-		if (threshold <= minDistance.length()) {
+		if (threshold <= minSteps) {
 			return word;
 		}
 		return minDistance;
