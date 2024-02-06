@@ -19,16 +19,16 @@ public class SpellChecker {
 		word1 = word1.toLowerCase();
 		word2 = word2.toLowerCase();
 		if (word1.isEmpty()) {
-				return word2.length();
-			}
+			return word2.length();
+		}
 		if (word2.isEmpty()) {
-				return word1.length();
-			}
+			return word1.length();
+		}
 		if (word1.charAt(0) == word2.charAt(0)) {
-					return levenshtein(tail(word1), tail(word2));
+			return levenshtein(tail(word1), tail(word2));
 		}
 		int min = Math.min(levenshtein(tail(word1), word2), levenshtein(word1, tail(word2)));
-		return 1 + Math.min(min, levenshtein(tail(word1), tail(word2))+0 );
+		return 1 + Math.min(min, levenshtein(tail(word1), tail(word2)) + 0);
 
 	}
 
@@ -43,8 +43,16 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		// Your code goes here
-		return null;
+		String minDistance = word;
+		for (int i = 0; i < dictionary.length; i++) {
+			if (levenshtein(word, dictionary[i]) < minDistance.length()) {
+				minDistance = dictionary[i];
+			}
+		}
+		if (threshold < minDistance.length()) {
+			return word;
+		}
+		return minDistance;
 	}
 
 }
