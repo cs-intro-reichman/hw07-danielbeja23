@@ -35,6 +35,7 @@ public class HashTagTokenizer {
 
 		int N = hashtag.length();
 		for (int i = 0; i <= N; i++) { // change to 0 from 1 the i
+			// #feedback - you should check if the substring(0,i) exists in the dictionary, and if so, print it and call breakHashTag again.
 			if (existInDictionary(hashtag.substring(i, N), dictionary)) {
 				breakHashTag(hashtag.substring(0, i), dictionary);
 				System.out.println(hashtag.substring(i, N));
