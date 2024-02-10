@@ -11,6 +11,7 @@ public class SpellChecker {
 	}
 
 	public static String tail(String str) {
+		// #feedback - you can return "str.substring(1, str.length())" directly (without the assignment to str).
 		str = str.substring(1, str.length());
 		return str;
 	}
@@ -28,6 +29,7 @@ public class SpellChecker {
 			return levenshtein(tail(word1), tail(word2));
 		}
 		int min = Math.min(levenshtein(tail(word1), word2), levenshtein(word1, tail(word2)));
+		// #feedback - the "+ 0" can be removed.
 		return 1 + Math.min(min, levenshtein(tail(word1), tail(word2)) + 0);
 
 	}
